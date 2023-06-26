@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Search, ShoppingCartOutlined } from "@mui/icons-material";
 import { Badge } from "@mui/material";
@@ -57,7 +56,6 @@ const Navbar = () => {
   `;
 
   return (
-    <div>
       <Container>
         <Wrapper>
           <Left>
@@ -81,7 +79,6 @@ const Navbar = () => {
           </Right>
         </Wrapper>
       </Container>
-    </div>
   );
 };
 
