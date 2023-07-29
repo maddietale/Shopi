@@ -34,7 +34,7 @@ const Option = styled.option``;
 
 const ProductList = () => {
   return (
-    <div>
+    <Container>
       <Navbar />
       <Announcement />
       <Title>Dresses</Title>
@@ -77,7 +77,7 @@ const ProductList = () => {
       <Products />
       <Newsletter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 
