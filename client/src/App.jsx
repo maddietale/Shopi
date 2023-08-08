@@ -1,12 +1,12 @@
 import React from "react";
 // COMPONENTS
 import Home from "./pages/Home";
-import Register from "./pages/Register";
+import Cart from "./pages/Cart";
 
 const App = () => {
   return (
     <>
-      <Register />
+      <Cart />
     </>
   );
 };
