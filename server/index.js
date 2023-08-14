@@ -5,12 +5,14 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 // ROUTES
+const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
 // DB
 mongoose.connect(process.env.DATABASE_URI)
 .then(() => console.log("DB Connect!"))
 .catch((err) => console.log(`DB ERROR: ${err}!`));
 // CODE
+app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 // SERVER
 app.listen(process.env.PORT, () => {
