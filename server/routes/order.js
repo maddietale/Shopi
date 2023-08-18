@@ -62,7 +62,7 @@ router.delete("/:id", verifyAdmin, async (req, res) => {
     }
 });
 
-// GET MONTHLY INCOME
+// GET INCOME
 router.get("/income", verifyAdmin, async (req, res) => {
     const date = new Date();
     const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
