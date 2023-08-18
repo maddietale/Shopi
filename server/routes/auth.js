@@ -12,7 +12,7 @@ router.post("/register", async (req, res) => {
     });
     try {
         const savedUser = await newUser.save();
-        const {password, ...rest} = savedUser._doc;
+        const { password, ...rest } = savedUser._doc;
         res.status(201).json(rest);
     } catch (err) {
         res.status(500).json(err);
@@ -31,7 +31,7 @@ router.post("/login", async (req, res) => {
             isAdmin: user.isAdmin
         }, process.env.JWT_SEC, { expiresIn: "3d" });
         const { password, ...rest } = user._doc;
-        res.status(200).json({...rest, accessToken});
+        res.status(200).json({ ...rest, accessToken });
     } catch (err) {
         res.status(500).json(err);
     }

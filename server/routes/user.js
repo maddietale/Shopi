@@ -1,4 +1,4 @@
-const { authertization, verifyAdmin } = require("../middleware/auth");
+const { authorization, verifyAdmin } = require("../middleware/auth");
 const User = require("../models/User");
 const router = require("express").Router();
 
@@ -51,7 +51,7 @@ router.get("/", verifyAdmin, async (req, res) => {
 // });
 
 // UPDATE
-router.put("/:id", authertization, async (req, res) => {
+router.put("/:id", authorization, async (req, res) => {
     if (req.body.password) {
         req.body.password = CryptoJS.AES.encrypt(
             req.body.password,
@@ -73,7 +73,7 @@ router.put("/:id", authertization, async (req, res) => {
 });
 
 // DELETE
-router.delete("/:id", authertization, async (req, res) => {
+router.delete("/:id", authorization, async (req, res) => {
     try {
         await User.findByIdAndDelete(req.params.id);
         res.status(200).json("User has been deleted...");
